@@ -1,0 +1,33 @@
+import { NgZone } from '@angular/core';
+import { Observable } from 'rxjs';
+import { AgmMarker, GoogleMapsAPIWrapper, MarkerManager } from '@agm/core';
+import { AgmMarkerSpider } from '../../directives/marker-spider';
+import { MarkerSpiderInstance, SpiderOptions } from '../google-spider-types';
+export declare class SpiderManager extends MarkerManager {
+    protected _mapsWrapper: GoogleMapsAPIWrapper;
+    protected _zone: NgZone;
+    protected _markerManager: MarkerManager;
+    private _spiderInstance;
+    private _resolver;
+    constructor(_mapsWrapper: GoogleMapsAPIWrapper, _zone: NgZone, _markerManager: MarkerManager);
+    readonly instance: Promise<MarkerSpiderInstance>;
+    init(options: SpiderOptions): void;
+    addMarker(marker: AgmMarker): void;
+    deleteMarker(marker: AgmMarker): Promise<void>;
+    clearMarkers(): Promise<void>;
+    setLegColors(c: AgmMarkerSpider): void;
+    setMarkersWontMove(c: AgmMarkerSpider): void;
+    setMarkersWontHide(c: AgmMarkerSpider): void;
+    setBasicFormatEvents(c: AgmMarkerSpider): void;
+    setKeepSpiderfied(c: AgmMarkerSpider): void;
+    setIgnoreMapClick(c: AgmMarkerSpider): void;
+    setNearbyDistance(c: AgmMarkerSpider): void;
+    setCircleSpiralSwitchover(c: AgmMarkerSpider): void;
+    setCircleFootSeparation(c: AgmMarkerSpider): void;
+    setCircleStartAngle(c: AgmMarkerSpider): void;
+    setSpiralFootSeparation(c: AgmMarkerSpider): void;
+    setSpiralLengthStart(c: AgmMarkerSpider): void;
+    setSpiralLengthFactor(c: AgmMarkerSpider): void;
+    setLegWeight(c: AgmMarkerSpider): void;
+    createEventObservable<T>(eventName: string, marker: AgmMarker): Observable<T>;
+}

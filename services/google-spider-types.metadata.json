@@ -1,0 +1,1 @@
+[{"__symbolic":"module","version":4,"metadata":{"MarkerSpiderInstance":{"__symbolic":"interface"},"FormatEvent":{"__symbolic":"interface"},"SpiderfyEvent":{"__symbolic":"interface"}},"exports":[{"from":"ts-overlapping-marker-spiderfier","export":["SpiderOptions","LegColorOptions"]}]}]
